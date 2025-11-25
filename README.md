@@ -126,7 +126,7 @@ controle.executar(new DesligarLuz());
 
 
 
-# Estrutura do Padrão (visão geral)
+## Estrutura do Padrão (visão geral)
 
 *Command:* Interface que define a operação a ser executada.
 
@@ -138,7 +138,7 @@ controle.executar(new DesligarLuz());
 
 *Client:* Configura e associa comandos ao invocador.
 
-# Pontos Fortes
+## Pontos Fortes
 
  - Reduz o acoplamento entre quem solicita e quem executa a ação.
 
@@ -150,7 +150,7 @@ controle.executar(new DesligarLuz());
 
  - Organização clara do código, facilitando manutenção e testes.
 
-# Pontos Fracos
+## Pontos Fracos
 
  - Pode gerar grande número de classes em sistemas complexos.
 
@@ -164,8 +164,8 @@ O padrão **Command** oferece uma forma robusta e organizada de encapsular açõ
 
 Este estudo demonstrou a diferença entre uma implementação direta e uma estrutura baseada no padrão, evidenciando ganhos consideráveis na modularidade e manutenção.
 
-3. TEMPLATE METHOD
-Descrição do Padrão Template Method
+# 3. TEMPLATE METHOD
+## Descrição do Padrão Template Method
 
 O padrão Template Method define o esqueleto de um algoritmo dentro de um método, deixando para as subclasses a responsabilidade de implementar partes específicas desse processo.
 Ou seja: ele fixa a estrutura geral e permite que apenas passos específicos variem.
@@ -178,7 +178,7 @@ Quando queremos evitar duplicação de lógica;
 
 Quando é necessário impor uma ordem fixa no algoritmo, mas ainda assim permitir extensões.
 
-Objetivo
+## Objetivo
 
 Definir o esqueleto de um algoritmo dentro de um método final (template).
 
@@ -188,7 +188,7 @@ Evitar duplicação de código.
 
 Garantir que a ordem das operações seja sempre respeitada.
 
-Estrutura
+## Estrutura
 
 Template (classe abstrata)
 Define o método principal (template) que organiza os passos.
@@ -202,7 +202,7 @@ Etapas padrão que podem ser sobrescritas.
 Concrete Classes
 Implementam as variações do algoritmo.
 
-Problema: Código sem o Padrão
+## Problema: Código sem o Padrão
 
 No exemplo a seguir, temos dois tipos de relatórios sendo gerados. Ambos seguem quase o mesmo processo, porém o código é duplicado e difícil de manter:
 
@@ -234,7 +234,7 @@ const pedidoPresencial = new ProcessarPedidoPresencial();
 pedidoPresencial.processar();
 ```
 
-Problemas desse modelo:
+## Problemas desse modelo:
 
 Várias classes repetem a mesma lógica (“Coletando dados…”).
 
@@ -294,21 +294,21 @@ const presencial = new ProcessarPedidoPresencial();
 presencial.processar();
 ```
 
-Estrutura do Padrão (Visão Geral)
+## Estrutura do Padrão (Visão Geral)
 
-Template Method
+# Template Method
 Método que define a sequência do algoritmo.
 
-Primitive Operations
+# Primitive Operations
 Passos obrigatórios e abstratos a serem implementados.
 
-Concrete Classes
+# Concrete Classes
 Fornecem as variações necessárias.
 
-Hooks (opcional)
+# Hooks (opcional)
 Etapas com comportamento padrão, podendo ou não ser sobrescritas.
 
-Pontos Fortes
+## Pontos Fortes
 
 Remove duplicação de código.
 
@@ -318,7 +318,7 @@ Facilmente extensível (basta criar novas subclasses).
 
 Facilita manutenção: mudanças no fluxo geral precisam ser feitas apenas na classe abstrata.
 
-Pontos Fracos
+## Pontos Fracos
 
 Pode aumentar o acoplamento entre superclasse e subclasses.
 
@@ -326,6 +326,6 @@ Subclasses precisam conhecer bem o algoritmo para implementar corretamente.
 
 Pode “engessar” o fluxo se o template for muito rígido.
 
-Conclusão
+# Conclusão
 
 O padrão Template Method é ideal quando múltiplas classes seguem um fluxo semelhante, mas com pequenas variações. Ele centraliza o algoritmo e reduz significativamente duplicações, oferecendo uma forma limpa e extensível de padronizar processos.
